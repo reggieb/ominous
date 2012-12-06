@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121206144249) do
+ActiveRecord::Schema.define(:version => 20121206153254) do
+
+  create_table "ominous_closers", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "ominous_warning_closers", :force => true do |t|
+    t.integer  "warning_id"
+    t.integer  "closer_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "ominous_warnings", :force => true do |t|
     t.string   "name"

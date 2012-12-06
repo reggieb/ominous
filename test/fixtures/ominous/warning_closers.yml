@@ -1,0 +1,15 @@
+one: 
+  warning_id: 1
+  closer_id: 1
+  position: 1
+
+two: 
+  warning_id: 1
+  closer_id: 2
+  position: 2
+  
+three:
+  warning_id: 2
+  closer_id: 2
+  position: 1  
+
