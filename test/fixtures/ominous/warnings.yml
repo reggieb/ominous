@@ -1,8 +1,8 @@
 one: 
   id: 1
-  name: one
+  name: thing_alert
 
 two:
   id: 2
-  name: two
+  name: other_alert
 
