@@ -7,6 +7,66 @@ class ThingsControllerTest < ActionController::TestCase
     @warning = Ominous::Warning.find(1)
   end
 
+  def test_show_without_warning
+    get :show, id: @thing
+    assert_response :success
+    assert_warning_is_not_displayed
+  end
+  
+  def test_show_with_warning
+    get :show, id: @thing_with_warning
+    assert_response :success
+    assert_warning_displayed
+  end
+  
+  def test_show_when_thing_without_warning_but_warning_in_session
+    get(
+      :show, 
+      {id: @thing}, 
+      {:ominous_warnings => {@warning.name.to_sym => :show}}
+    )
+    assert_response :success
+    assert_warning_displayed
+  end
+  
+  def test_show_when_warning_in_session_marked_as_hide
+    get(
+      :show, 
+      {id: @thing}, 
+      {:ominous_warnings => {@warning.name.to_sym => :hide}}
+    )
+    assert_response :success
+    assert_warning_is_not_displayed
+  end
+  
+  def test_triggering_warning_does_not_over_ride_existing_flags
+    get(
+      :show, 
+      {id: @thing_with_warning}, 
+      {:ominous_warnings => {@warning.name.to_sym => :hide}}
+    )
+    assert_response :success
+    assert_warning_is_not_displayed
+  end
+
+  def test_edit
+    get :edit, id: @thing
+    assert_response :success
+  end
+
+  def test_update
+    put :update, id: @thing, thing: { name: @thing.name }
+    assert_redirected_to thing_path(assigns(:thing))
+  end
+
+  def test_destroy
+    assert_difference('Thing.count', -1) do
+      delete :destroy, id: @thing
+    end
+
+    assert_redirected_to things_path
+  end
+  
   def test_index
     get :index
     assert_response :success
@@ -26,40 +86,13 @@ class ThingsControllerTest < ActionController::TestCase
 
     assert_redirected_to thing_path(assigns(:thing))
   end
-
-  def test_show_without_warning
-    get :show, id: @thing
-    assert_response :success
+  
+  private
+  def assert_warning_displayed
+    assert_tag :tag => "div", :attributes => { :class => "ominous_warning" }
+  end
+  
+  def assert_warning_is_not_displayed
     assert_no_tag :tag => "div", :attributes => { :class => "ominous_warning" }
-  end
-  
-  def test_show_with_warning
-    get :show, id: @thing_with_warning
-    assert_response :success
-    assert_tag :tag => "div", :attributes => { :class => "ominous_warning" }
-  end
-  
-  def test_show_when_thing_without_warning_but_warning_in_session
-    get :show, {id: @thing}, {:ominous_warnings => [@warning.name]}
-    assert_response :success
-    assert_tag :tag => "div", :attributes => { :class => "ominous_warning" }
-  end
-
-  def test_edit
-    get :edit, id: @thing
-    assert_response :success
-  end
-
-  def test_update
-    put :update, id: @thing, thing: { name: @thing.name }
-    assert_redirected_to thing_path(assigns(:thing))
-  end
-
-  def test_destroy
-    assert_difference('Thing.count', -1) do
-      delete :destroy, id: @thing
-    end
-
-    assert_redirected_to things_path
   end
 end

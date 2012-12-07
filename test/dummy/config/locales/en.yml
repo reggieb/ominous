@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+  
+  ominous:
+    warning:
+      thing_alert:
+        title: Warning
+        description: You have viewed a Thing with it's warning set.

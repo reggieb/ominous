@@ -1,0 +1,10 @@
+<% warnings.each do |warning| %>
+<div class="warning">
+  <div class="heading">
+    <h2><%= t("ominous.warning.#{warning.name}.title") %></h2>
+  </div>
+  <div class="description">
+    <%= t("ominous.warning.#{warning.name}.description") %>
+  </div>
+</div>
+<% end %>
