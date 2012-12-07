@@ -7,10 +7,7 @@ module Ominous
         helper Ominous::ApplicationHelper
       end
     end
-    
-#    initializer "ominous.assets.precompile" do |app|
-#      app.config.assets.precompile += %w(_ominous_colours.scss application.scss warnings.scss)
-#    end
+   
   end
 end
 
