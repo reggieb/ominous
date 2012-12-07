@@ -4,7 +4,9 @@ This engine adds warnings to a rails application.
 
 == Installation
 
-Add 'gem ominous' to your gem file
+Add to your gemfile:
+
+    'gem ominous'  # TODO - gem not created yet
 
 == Migrations
 
@@ -31,7 +33,8 @@ To display a warning add this somewhere in the page:
 
     <%= ominous_warnings %>
 
-This will insert a div of class 'ominous_warning', containing the warning messages.
+This will insert a div of class 'ominous_warnings', containing the warning messages 
+(if any have been triggered).
 
 If you wish to use the ominous default styling, add this to your application.scss file:
 
@@ -51,4 +54,4 @@ the entry needs to look like this:
         warning:
           something_happened:
             title: Warning
-            description: You have viewed a Thing with it's warning set.
+            description: You have triggered a warning.
