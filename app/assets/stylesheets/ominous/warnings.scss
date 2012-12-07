@@ -1,0 +1,41 @@
+@import 'ominous_colours';
+
+.warning {
+  position: absolute;
+  left:15%;
+  top: 100px;
+  margin: auto;
+  width: 70%;
+  z-index: 10000;
+  background-color: $white;
+  border: $warning solid 3px;
+  font-size: 1.2em;
+
+  .heading {
+
+    h2 {
+      background-color: $warning;
+      color: $white;
+      margin: 0;
+    }
+
+  }
+
+  h2, .description {
+    padding: 5px;
+  }
+
+
+  li {
+    margin: 1em 0;
+
+    a, a:hover, a:visited {
+      color: blue;
+    }
+  }
+
+  .hide_at_start {
+    display: none;
+  }
+
+}

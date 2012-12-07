@@ -9,7 +9,7 @@ module Ominous
             :partial => 'ominous/warnings/list',
             :locals => {:warnings => warning_to_display}
           ), 
-          :class => 'ominous_warning')
+          :class => 'ominous_warnings')
       end
     end
     
