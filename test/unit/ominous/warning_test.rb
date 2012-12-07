@@ -25,5 +25,13 @@ module Ominous
         Warning.trigger(:does_not_exist)
       end
     end
+    
+    def test_moving_closers
+      closer_one = Closer.find(1)
+      closer_two = Closer.find(2)
+      assert_equal([closer_one, closer_two], @warning.closers)
+      @warning.move_to_top(closer_two)
+      assert_equal([closer_two, closer_one], @warning.reload.closers)
+    end
   end
 end

@@ -89,10 +89,10 @@ class ThingsControllerTest < ActionController::TestCase
   
   private
   def assert_warning_displayed
-    assert_tag :tag => "div", :attributes => { :class => "ominous_warning" }
+    assert_tag :tag => "div", :attributes => { :class => "ominous_warnings" }
   end
   
   def assert_warning_is_not_displayed
-    assert_no_tag :tag => "div", :attributes => { :class => "ominous_warning" }
+    assert_no_tag :tag => "div", :attributes => { :class => "ominous_warnings" }
   end
 end
