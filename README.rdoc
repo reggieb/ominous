@@ -1,3 +1,54 @@
 = Ominous
 
-This project rocks and uses MIT-LICENSE.
+This engine adds warnings to a rails application.
+
+== Installation
+
+Add 'gem ominous' to your gem file
+
+== Migrations
+
+Use this command to copy the ominous migrations over to the parent rails app:
+
+    rake ominous:install:migrations
+
+== Warnings
+
+Warnings are the core model used by Ominous.
+
+    warning = Ominous::Warning.create(:something_happened)
+
+Once a warning has been created, it can triggered with:
+
+    Ominous::Warning.trigger :something_happened
+
+This causes a flag to be set in session, indicating that the associated warning
+needs to be displayed.
+
+== Displaying Warnings
+
+To display a warning add this somewhere in the page:
+
+    <%= ominous_warnings %>
+
+This will insert a div of class 'ominous_warning', containing the warning messages.
+
+If you wish to use the ominous default styling, add this to your application.scss file:
+
+    *= require ominous/warnings
+
+Alternatively, you can define your own styling.
+
+== Warning text
+
+Warnings contain a title and description. The text used for each needs to be
+defined in your locale file. For the something_happened warning used above
+the entry needs to look like this:
+
+    en:
+
+      ominous:
+        warning:
+          something_happened:
+            title: Warning
+            description: You have viewed a Thing with it's warning set.
