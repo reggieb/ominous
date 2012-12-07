@@ -1,0 +1,11 @@
+closer_one:
+  closure_method: close_and_hide_warning
+  start_hidden: true
+
+closer_two:
+  url: http://undervale.co.uk
+  closure_method: redirect
+  
+closer_three:
+  closure_method: reveal_hidden
+  

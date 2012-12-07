@@ -1,8 +1,10 @@
 one:
   id: 1
-  name: warning_one
+  name: closer_one
+  closure_method: close_and_hide_warning
 
 two: 
   id: 2
-  name: warning_two
+  name: closer_two
   url: http://undervale.co.uk
+  closure_method: redirect

@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(:version => 20121207090710) do
   create_table "ominous_closers", :force => true do |t|
     t.string   "name"
     t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "closure_method", :limit => 30
+    t.boolean  "start_hidden",                 :default => false
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
   end
 
   create_table "ominous_warning_closers", :force => true do |t|

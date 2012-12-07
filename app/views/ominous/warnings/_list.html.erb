@@ -6,5 +6,18 @@
   <div class="description">
     <%= t("ominous.warning.#{warning.name}.description") %>
   </div>
+  <div class="closers">
+<%   warning.closers.each do |closer| %> 
+    <div class="<%= classes_for(closer)  %>">
+      <p><%=  t("ominous.warning.#{warning.name}.#{closer.name}.message") %></p>
+      <p><%= link_to(
+               t("ominous.warning.#{warning.name}.#{closer.name}.link"), 
+               closer.url, 
+               :class => closer.closure_method
+             ) 
+           %>
+    </div>
+<%   end %>
+  </div>
 </div>
 <% end %>

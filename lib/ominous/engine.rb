@@ -5,6 +5,7 @@ module Ominous
     initializer 'ominous.action_controller' do |app|
       ActiveSupport.on_load :action_controller do
         helper Ominous::ApplicationHelper
+        helper Ominous::WarningsHelper
       end
     end
    
