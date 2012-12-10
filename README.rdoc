@@ -6,7 +6,7 @@ This engine adds warnings to a rails application.
 
 Add to your gemfile:
 
-    'gem ominous'  # TODO - gem not created yet
+    'gem ominous'
 
 Some ominous functionality is provided by JavaScript. To enable this, you
 need to add this to your app/assets/javascripts/application.js
@@ -23,7 +23,7 @@ Use this command to copy the ominous migrations over to the parent rails app:
 
 Warnings are the core model used by Ominous.
 
-    warning = Ominous::Warning.create(:something_happened)
+    warning = Ominous::Warning.create :something_happened
 
 Once a warning has been created, it can triggered with:
 
@@ -47,10 +47,30 @@ If you wish to use the ominous default styling, add this to your application.scs
 
 Alternatively, you can define your own styling.
 
+== Closing a warning
+
+Closers provide links within a warning, that allow a user to handle the warning.
+How the link behaves depends upon the closure method associated with the closer.
+See app/models/ominous/closer.rb for a list of closure methods and the behaviour
+associated with them.
+
+Warnings can have many closers, and closers can be shared across many warnings.
+This is achieved through the WarningCloser class. This class acts_as_list, 
+so that it can be used to arrange the closers within a warning. To move
+a closer within a warning, use this pattern:
+
+    warning.<acts_as_list_method>(closer)
+
+For example:
+
+    warning.move_to_top(closer) 
+
 == Warning text
 
-Warnings contain a title and description. The text used for each needs to be
-defined in your locale file. For the something_happened warning used above
+Warnings contain a title and description. Closers contain a message and a link.
+The text used for each needs to be defined in your locale file.
+
+For the something_happened warning used above
 the entry needs to look like this:
 
     en:
@@ -60,3 +80,18 @@ the entry needs to look like this:
           something_happened:
             title: Warning
             description: You have triggered a warning.
+            closer_one:
+              message: This is the first closer
+              link: Click here to activate closer_one
+            closer_two:
+              message: This is the second closer
+              link: Click here to activate closer_two
+
+
+== Managing warnings
+
+This engine does not provide a tool for creating warnings and their associated
+closers. It is envisage that warnings and closers will be defined in the 
+background app, for example via seeds (see test/dummy). If more flexible 
+assignment and management is require, this should be built into the host 
+application.
