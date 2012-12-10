@@ -8,6 +8,10 @@ Add to your gemfile:
 
     'gem ominous'
 
+Add this to your routes to mount the engine within your application:
+
+    mount Ominous::Engine => "/ominous"
+
 Some ominous functionality is provided by JavaScript. To enable this, you
 need to add this to your app/assets/javascripts/application.js
 
