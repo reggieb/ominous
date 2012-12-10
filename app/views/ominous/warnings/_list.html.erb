@@ -10,12 +10,14 @@
 <%   warning.closers.each do |closer| %> 
     <div class="<%= classes_for(closer)  %>">
       <p><%=  t("ominous.warning.#{warning.name}.#{closer.name}.message") %></p>
-      <p><%= link_to(
+      <p>
+        <%= link_to(
                t("ominous.warning.#{warning.name}.#{closer.name}.link"), 
                closer.url, 
                :class => closer.closure_method
              ) 
-           %>
+         %>
+      </p>
     </div>
 <%   end %>
   </div>
