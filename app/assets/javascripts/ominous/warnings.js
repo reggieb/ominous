@@ -10,7 +10,7 @@ $(function() {
     return false;
   });
   
-  $('.ominous_warnings .close_and_hide_warning').click( function() {
+  $('.ominous_warnings .close_and_dismiss_warning').click( function() {
     send_data_to_server($(this).attr('href'));
     $(this).closest('.warning').hide('fade');
     return false;    

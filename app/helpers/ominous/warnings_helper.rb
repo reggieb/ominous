@@ -18,7 +18,7 @@ module Ominous
     end
     
     def closer_url(warning, closer)
-      if closer.closure_method == 'close_and_hide_warning'
+      if closer.closure_method == 'close_and_dismiss_warning'
         ominous.dismiss_warning_path(warning)
       else
         return closer.url

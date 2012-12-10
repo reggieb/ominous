@@ -1,5 +1,5 @@
 closer_one:
-  closure_method: close_and_hide_warning
+  closure_method: close_and_dismiss_warning
   start_hidden: true
 
 closer_two:
