@@ -5,7 +5,7 @@ module Ominous
     CLOSURE_METHODS = {
       :reveal_hidden => 'Hides the current closers and reveals any hidden closers', 
       :close_and_hide_warning => 'Closes the warning message and tells server not to display warning again', 
-      :redirect => 'Link take user to another location without clearing the warning' 
+      :redirect => 'Link to take user to another location without clearing the warning' 
     }    
     
     validates :name, :presence => true

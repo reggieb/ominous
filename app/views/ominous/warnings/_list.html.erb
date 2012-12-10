@@ -11,12 +11,7 @@
     <div class="<%= classes_for(closer)  %>">
       <p><%=  t("ominous.warning.#{warning.name}.#{closer.name}.message") %></p>
       <p>
-        <%= link_to(
-               t("ominous.warning.#{warning.name}.#{closer.name}.link"), 
-               closer.url, 
-               :class => closer.closure_method
-             ) 
-         %>
+        <%= closer_link_to(warning, closer) %>
       </p>
     </div>
 <%   end %>

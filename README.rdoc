@@ -8,6 +8,11 @@ Add to your gemfile:
 
     'gem ominous'  # TODO - gem not created yet
 
+Some ominous functionality is provided by JavaScript. To enable this, you
+need to add this to your app/assets/javascripts/application.js
+
+    //= require ominous/warnings
+
 == Migrations
 
 Use this command to copy the ominous migrations over to the parent rails app:
