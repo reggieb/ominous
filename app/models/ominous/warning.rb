@@ -13,6 +13,7 @@ module Ominous
     has_many(
       :closers,
       :through => :warning_closers,
+      :uniq => true,
       :order => :position
     )
     

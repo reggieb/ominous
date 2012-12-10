@@ -7,5 +7,7 @@ module Ominous
     belongs_to :warning
     
     acts_as_list :scope =>  :warning
+    
+    validates_uniqueness_of :closer_id, :scope => :warning_id
   end
 end
