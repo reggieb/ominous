@@ -1,6 +1,6 @@
 module Ominous
   class Warning < ActiveRecord::Base
-    attr_accessible :name
+    attr_accessible :name, :closers_attributes
     
     validates :name, :presence => true
     
@@ -16,6 +16,8 @@ module Ominous
       :uniq => true,
       :order => :position
     )
+    
+    accepts_nested_attributes_for :closers
     
     def self.trigger(name)
       unless exists?(:name => name)
