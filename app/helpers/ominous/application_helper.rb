@@ -21,7 +21,6 @@ module Ominous
     end
     
     def warnings_to_show?
-      session_store
       session_store.values.include? :show
     end
     

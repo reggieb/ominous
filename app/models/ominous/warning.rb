@@ -34,6 +34,11 @@ module Ominous
       @requests = []
     end
     
+    # Called after each controller action.
+    def self.after_action_tasks
+      clear_requests # So that warnings called while processing one action are not carried over to the next where they may not be relevant
+    end
+    
     private
     def method_missing(symbol, *args, &block)
       if acts_as_list_method?(symbol)

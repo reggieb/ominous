@@ -73,6 +73,12 @@ class ThingsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:things)
 
   end
+  
+  def test_warning_not_caried_on_to_next_action_when_ominous_warnings_helper_not_called
+    Ominous::Warning.trigger(:thing_alert)
+    test_index
+    assert_equal([], Ominous::Warning.requests)
+  end
 
   def test_new
     get :new

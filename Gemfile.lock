@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ominous (0.0.1)
+    ominous (0.0.4)
       acts_as_list
       jquery-rails
       rails (~> 3.2.8)
