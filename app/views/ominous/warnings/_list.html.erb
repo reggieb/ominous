@@ -4,12 +4,12 @@
     <h2><%= warning.title %></h2>
   </div>
   <div class="description">
-    <%= warning.description %>
+    <%= sanitize warning.description %>
   </div>
   <div class="closers">
 <%   warning.closers.each do |closer| %> 
     <div class="<%= classes_for(closer)  %>">
-      <p><%= closer.message %></p>
+      <p><%= sanitize closer.message %></p>
       <p>
         <%= closer_link_to(warning, closer) %>
       </p>

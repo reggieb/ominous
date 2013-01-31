@@ -9,6 +9,11 @@ end
 # -----
 # Moved text decoration of warnings and closers to models. 
 # 
+# Upgrading to this version requires a migration:
+# 
+#     rake ominous:install:migrations
+#     rake db:migrate
+# 
 # In use, the separation of text (in translations) from the warning objects was 
 # confusing. It proved difficult for users to create new warning, and match them 
 # to translations.
