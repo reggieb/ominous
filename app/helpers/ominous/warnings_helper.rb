@@ -11,7 +11,7 @@ module Ominous
     end
     
     def closer_link_to(warning, closer)
-      text = t("ominous.warning.#{warning.name}.#{closer.name}.link") 
+      text = closer.link_text 
       link_class = closer.closure_method
       url = closer_url(warning, closer)
       link_to(text, url, :method => :put, :class => link_class)

@@ -1,11 +1,16 @@
 closer_one:
   closure_method: close_and_dismiss_warning
   start_hidden: true
+  message: This should not appear initially
+  link_text: Click here to close the warning and tell the server not to show it again
 
 closer_two:
   url: http://undervale.co.uk
   closure_method: redirect
+  message: This will redirect to another site
+  link_text: Click to go elsewhere
   
 closer_three:
   closure_method: reveal_hidden
-  
+  message: This should appear initially
+  link_text: Click here to see hidden closers

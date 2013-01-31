@@ -1,6 +1,6 @@
 module Ominous
   class Closer < ActiveRecord::Base
-    attr_accessible :name, :url, :closure_method, :start_hidden
+    attr_accessible :name, :url, :closure_method, :start_hidden, :message, :link_text
     
     CLOSURE_METHODS = {
       :reveal_hidden => 'Hides the current closers and reveals any hidden closers', 

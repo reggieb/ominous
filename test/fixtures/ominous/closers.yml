@@ -2,9 +2,13 @@ one:
   id: 1
   name: closer_one
   closure_method: close_and_dismiss_warning
+  message: Closer one
+  link_text: Click to close
 
 two: 
   id: 2
   name: closer_two
   url: http://undervale.co.uk
   closure_method: redirect
+  message: Visit site
+  link_text: Click here to redirect

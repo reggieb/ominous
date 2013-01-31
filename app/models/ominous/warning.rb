@@ -1,6 +1,6 @@
 module Ominous
   class Warning < ActiveRecord::Base
-    attr_accessible :name, :closers_attributes
+    attr_accessible :name, :closers_attributes, :title, :description
     
     validates :name, :presence => true
     

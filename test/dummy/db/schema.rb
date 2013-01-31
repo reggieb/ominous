@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121207090710) do
+ActiveRecord::Schema.define(:version => 20130131134024) do
 
   create_table "ominous_closers", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20121207090710) do
     t.boolean  "start_hidden",                 :default => false
     t.datetime "created_at",                                      :null => false
     t.datetime "updated_at",                                      :null => false
+    t.string   "link_text"
+    t.text     "message"
   end
 
   create_table "ominous_warning_closers", :force => true do |t|
@@ -32,8 +34,10 @@ ActiveRecord::Schema.define(:version => 20121207090710) do
 
   create_table "ominous_warnings", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "title"
+    t.text     "description"
   end
 
   create_table "things", :force => true do |t|

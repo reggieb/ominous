@@ -1,15 +1,15 @@
 <% warnings.each do |warning| %>
 <div class="warning">
   <div class="heading">
-    <h2><%= t("ominous.warning.#{warning.name}.title") %></h2>
+    <h2><%= warning.title %></h2>
   </div>
   <div class="description">
-    <%= t("ominous.warning.#{warning.name}.description") %>
+    <%= warning.description %>
   </div>
   <div class="closers">
 <%   warning.closers.each do |closer| %> 
     <div class="<%= classes_for(closer)  %>">
-      <p><%=  t("ominous.warning.#{warning.name}.#{closer.name}.message") %></p>
+      <p><%= closer.message %></p>
       <p>
         <%= closer_link_to(warning, closer) %>
       </p>

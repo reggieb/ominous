@@ -3,18 +3,3 @@
 
 en:
   hello: "Hello world"
-  
-  ominous:
-    warning:
-      thing_alert:
-        title: Warning
-        description: You have viewed a Thing with it's warning set.
-        closer_one:
-          message: This should not appear initially
-          link: Click here to close the warning and tell the server not to show it again
-        closer_two:
-          message: This will redirect to another site
-          link: Click to go elsewhere
-        closer_three:
-          message: This should appear initially
-          link: Click here to see hidden closers
