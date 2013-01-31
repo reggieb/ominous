@@ -1,18 +1,17 @@
 
 defaults: &defaults
-  adapter: mysql2
-  username: rails_app
-  password: GTYHdse23B
-  host: localhost
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
 
 development:
   <<: *defaults
-  database: ominous_development
+  database: db/development.sqlite3
 
 test:
   <<: *defaults
-  database: ominous_test
+  database: db/test.sqlite3
 
 production:
   <<: *defaults
-  database: ominous
+  database: db/production.sqlite3
