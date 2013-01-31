@@ -71,26 +71,19 @@ For example:
 
 == Warning text
 
-Warnings contain a title and description. Closers contain a message and a link.
-The text used for each needs to be defined in your locale file.
+Warnings contain a title and description. Closers contain a message and link_text.
+These elements will be displayed within the warning message. See:
 
-For the something_happened warning used above
-the entry needs to look like this:
+  app/views/ominous/warnings/_list.html.erb
 
-    en:
+Default text will appear if these fields are empty. These defaults being the
+minimum needed to generate a usable warning message.
 
-      ominous:
-        warning:
-          something_happened:
-            title: Warning
-            description: You have triggered a warning.
-            closer_one:
-              message: This is the first closer
-              link: Click here to activate closer_one
-            closer_two:
-              message: This is the second closer
-              link: Click here to activate closer_two
+If warning#title is blank, a humanized version of the warning name will be 
+displayed.
 
+If closer.link_text is blank, the closer's link text will be constructed from
+the closure_method.
 
 == Managing warnings
 
