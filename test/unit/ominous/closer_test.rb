@@ -16,5 +16,25 @@ module Ominous
         @warning.closers << @closer
       end
     end
+    
+    def test_default_link_text
+      @closer.link_text = nil
+      Closer.closure_methods.keys.each do |closure_method|
+        @closer.closure_method = closure_method
+        @closer.save
+        link_text = "Click here to #{closure_method.to_s}".humanize
+        assert_equal(link_text, @closer.link_text)
+      end
+    end
+    
+    def test_default_link_text_with_empty_string
+      @closer.link_text = " "
+      closure_method = Closer.closure_methods.keys.first
+      @closer.closure_method = closure_method
+      @closer.save
+      link_text = "Click here to #{closure_method.to_s}".humanize
+      assert_equal(link_text, @closer.link_text)   
+    end
+    
   end
 end

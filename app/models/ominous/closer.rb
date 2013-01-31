@@ -14,6 +14,10 @@ module Ominous
     def self.closure_methods
       CLOSURE_METHODS
     end
+    
+    def link_text
+      super.blank? ? "click here to #{closure_method}".humanize : super
+    end
 
   end
 end

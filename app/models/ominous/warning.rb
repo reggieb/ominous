@@ -39,6 +39,10 @@ module Ominous
       clear_requests # So that warnings called while processing one action are not carried over to the next where they may not be relevant
     end
     
+    def title
+      super.blank? ? name.humanize : super
+    end
+    
     private
     def method_missing(symbol, *args, &block)
       if acts_as_list_method?(symbol)

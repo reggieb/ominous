@@ -33,5 +33,11 @@ module Ominous
       @warning.move_to_top(closer_two)
       assert_equal([closer_two, closer_one], @warning.reload.closers)
     end
+    
+    def test_default_title
+      @warning.title = nil
+      @warning.name = 'foo_bar'
+      assert_equal('Foo bar', @warning.title)
+    end
   end
 end
