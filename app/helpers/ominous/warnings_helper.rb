@@ -1,23 +1,23 @@
 module Ominous
   module WarningsHelper
-    def classes_for(closer)
+    def ominous_classes_for(closer)
       classes = ['closer']
-      classes << visibility(closer.start_hidden?)
+      classes << ominous_visibility(closer.start_hidden?)
       classes.join(' ')
     end
     
-    def visibility(truth)
+    def ominous_visibility(truth)
       truth ? 'start_hidden' : 'start_visible'
     end
     
-    def closer_link_to(warning, closer)
+    def ominous_closer_link_to(warning, closer)
       text = closer.link_text 
       link_class = closer.closure_method
-      url = closer_url(warning, closer)
+      url = ominous_closer_url(warning, closer)
       link_to(text, url, :method => :put, :class => link_class)
     end
     
-    def closer_url(warning, closer)
+    def ominous_closer_url(warning, closer)
       if closer.closure_method == 'close_and_dismiss_warning'
         ominous.dismiss_warning_path(warning)
       else

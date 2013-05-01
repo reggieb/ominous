@@ -8,10 +8,10 @@
   </div>
   <div class="closers">
 <%   warning.closers.each do |closer| %> 
-    <div class="<%= classes_for(closer)  %>">
+    <div class="<%= ominous_classes_for(closer)  %>">
       <p><%= sanitize closer.message %></p>
       <p>
-        <%= closer_link_to(warning, closer) %>
+        <%= ominous_closer_link_to(warning, closer) %>
       </p>
     </div>
 <%   end %>

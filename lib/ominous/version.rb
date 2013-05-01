@@ -1,9 +1,16 @@
 module Ominous
-  VERSION = "0.0.5"
+  VERSION = "0.1.0"
 end
 
 # History
 # =======
+# 
+# 0.1.0
+# -----
+# Move to beta
+# 
+# Rename ominous helper methods to remove likelihood of method classes in
+# host app. 
 # 
 # 0.0.5
 # -----
