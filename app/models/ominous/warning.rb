@@ -40,7 +40,7 @@ module Ominous
     end
     
     def title
-      super.blank? ? name.humanize : super
+      (super.blank? and name?) ? name.humanize : super
     end
     
     private

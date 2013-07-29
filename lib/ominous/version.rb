@@ -1,9 +1,14 @@
 module Ominous
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 end
 
 # History
 # =======
+#
+# 0.1.1
+# -----
+# Fix bug where trying to humanize the name to create a title cause an error
+# because the name was absent
 # 
 # 0.1.0
 # -----

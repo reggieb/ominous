@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/reggieb/ominous"
   s.summary     = "A rails warning engine"
   s.description = "Provides a rails app with a way of displaying and controlling warnings to users"
-
+  s.license = 'MIT-LICENSE'
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
