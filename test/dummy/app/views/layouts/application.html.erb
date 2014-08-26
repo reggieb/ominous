@@ -10,5 +10,18 @@
 
 <%= yield %>
 
+
+<div>
+  <h2>Ominous Warning session data</h2>
+<% if !session[:ominous_warnings] or session[:ominous_warnings].empty? %>
+  none
+<% else %>
+  <ul>
+<%  session[:ominous_warnings].each do |name, content| %>
+    <li><strong><%= name %></strong>: <%= content %></li>
+<%   end %>
+  </ul>
+<% end %>
+</div>
 </body>
 </html>

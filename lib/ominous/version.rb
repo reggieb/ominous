@@ -1,9 +1,15 @@
 module Ominous
-  VERSION = "0.1.1"
+  VERSION = "0.1.2"
 end
 
 # History
 # =======
+#
+# 0.1.2
+# -----
+# Fixes bug where close_and_dismiss_warning closure url was relative to root ('/')
+# which causes error is host app is in sub-uri. Url is now absolute rather than
+# relative.
 #
 # 0.1.1
 # -----
@@ -14,7 +20,7 @@ end
 # -----
 # Move to beta
 # 
-# Rename ominous helper methods to remove likelihood of method classes in
+# Rename ominous helper methods to remove likelihood of method clashes in
 # host app. 
 # 
 # 0.0.5
