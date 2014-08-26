@@ -12,6 +12,10 @@ Add this to your routes to mount the engine within your application:
 
     mount Ominous::Engine => "/ominous"
 
+Also ensure that you have root path defined in your routes:
+
+    root to: 'some_controller#index'
+
 Some ominous functionality is provided by JavaScript. To enable this, you
 need to add this to your app/assets/javascripts/application.js
 

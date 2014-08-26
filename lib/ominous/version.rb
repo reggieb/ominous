@@ -1,9 +1,13 @@
 module Ominous
-  VERSION = "0.1.2"
+  VERSION = "0.1.3"
 end
 
 # History
 # =======
+#
+# 0.1.3
+# -----
+# Better fix for close_and_dismiss_warning closure url when app hosted in sub-uri
 #
 # 0.1.2
 # -----

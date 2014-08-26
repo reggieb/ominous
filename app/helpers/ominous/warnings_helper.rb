@@ -19,7 +19,7 @@ module Ominous
     
     def ominous_closer_url(warning, closer)
       if closer.closure_method == 'close_and_dismiss_warning'
-        ominous.dismiss_warning_url(warning)
+        File.join(main_app.root_url, ominous.dismiss_warning_path(warning))
       else
         return closer.url
       end
